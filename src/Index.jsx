@@ -1,4 +1,5 @@
-import { Nav, Main, Footer } from "./Assets/assets";
+import { Main, Footer, Nav } from "./components/components";
+import "./index.css";
 
 const Index = () => {
   return (
