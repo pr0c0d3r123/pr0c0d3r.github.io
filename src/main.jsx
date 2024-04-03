@@ -1,15 +1,12 @@
-// Main Page
-
-import Index from "./Index";
-
-// Components
+// React libraries
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// Pages
+// Components
 
+import Index from "./Index";
 import {
   About,
   Contact,
@@ -17,20 +14,14 @@ import {
   Login,
   SignUp,
 } from "./components/Nav/Pages/pages";
+import "./index.css";
 
-import Error from "./components/Nav/Pages/Error";
-
-// Router
+// Initializing router
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Index />,
-    errorElement: <Error />,
-  },
-  {
-    path: "products",
-    element: <Products />,
   },
   {
     path: "about",
@@ -39,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact />,
+  },
+  {
+    path: "products",
+    element: <Products />,
   },
   {
     path: "login",
@@ -50,7 +45,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-// Render Page
+// Rendering react app
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

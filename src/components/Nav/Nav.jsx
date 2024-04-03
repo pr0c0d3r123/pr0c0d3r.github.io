@@ -4,12 +4,21 @@ import "./nav.css";
 const Nav = () => {
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="products">Products</NavLink>
-      <NavLink to="about">About Us</NavLink>
-      <NavLink to="contact">Contact</NavLink>
-      <NavLink to="login">Login</NavLink>
-      <NavLink to="signup">Sign Up</NavLink>
+      <div className="links">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="products">Products</NavLink>
+        <NavLink to="about">About Us</NavLink>
+        <NavLink to="contact">Contact</NavLink>
+      </div>
+
+      <div className="user">
+        <NavLink to="signup" className="signup-btn">
+          Sign Up
+        </NavLink>
+        <NavLink to="login" className="login-btn">
+          Login
+        </NavLink>
+      </div>
     </nav>
   );
 };
