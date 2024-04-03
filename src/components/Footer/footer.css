@@ -29,17 +29,15 @@ footer {
 
   background: var(--secondary);
   color: var(--primary);
+}
 
-  & .social {
-    display: flex;
-    gap: var(--pad);
-  }
+.social {
+  display: flex;
+  gap: var(--pad);
+}
 
-  & a {
-    & img {
-      width: 50px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-    }
-  }
+.social img {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
