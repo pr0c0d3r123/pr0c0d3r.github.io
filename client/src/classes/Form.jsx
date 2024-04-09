@@ -1,4 +1,5 @@
 // TODO FIX SIGN UP FORM
+// TODO YOU NEED TO MAKE POST FORM SO THAT YOU SEND PARAMETERS INSIDE OF URL
 
 import { NavLink } from "react-router-dom";
 //import axios from "axios";

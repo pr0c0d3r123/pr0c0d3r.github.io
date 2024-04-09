@@ -7,15 +7,15 @@ const Login = () => {
     <div className="center">
       <Nav />
       <form className="register-page">
-        <div className="label">
-          <label htmlFor="Email">Email</label>
+        <label htmlFor="Email">
+          Email
           <input type="email" name="Email" />
-        </div>
+        </label>
 
-        <div className="label">
-          <label htmlFor="Passwd">Password</label>
-          <input type="password" name="Passwd" />
-        </div>
+        <label htmlFor="Passwd">
+          Password
+          <input type="password" name="Passwd" className="passwd" />
+        </label>
 
         <input type="submit" value="Login" className="btn" />
 

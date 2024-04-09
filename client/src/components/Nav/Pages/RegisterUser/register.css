@@ -35,3 +35,7 @@ input {
   align-items: center;
   gap: 10px;
 }
+
+.passwd {
+  position: relative;
+}
