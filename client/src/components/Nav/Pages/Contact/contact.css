@@ -1,0 +1,66 @@
+:root {
+  --font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --lheight: 1.5;
+  --fontw-4: 400;
+  --fontw-5: 500;
+
+  --low: 10px;
+  --med: 20px;
+  --high: 30px;
+
+  --borr-inner: 10px;
+  --pad-outer: var(--borr-inner);
+  --borr-outer: calc(var(--borr-inner) + var(--pad-outer));
+  --low-w: 100px;
+  --mid-w: 200px;
+  --high-w: 300px;
+
+  --clr-scheme: light dark;
+  --primary: #d66f00;
+  --primary-dark: #814200;
+  --secondary: #242424;
+
+  font-synthesis: none;
+  --text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --trans: all 150ms ease-in-out;
+}
+
+::-webkit-input-placeholder {
+  color: var(--secondary);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: var(--med);
+
+  background: var(--secondary);
+  padding: var(--med);
+  border-radius: var(--borr-outer);
+
+  height: var(--high-w);
+}
+
+.contact input[type="email"],
+textarea {
+  border: none;
+  font-size: var(--med);
+
+  padding: var(--low);
+
+  background: var(--primary-dark);
+  color: var(--secondary);
+}
+
+.contact input[type="email"] {
+  width: calc(100% - var(--med));
+}
+
+textarea {
+  resize: none;
+}
