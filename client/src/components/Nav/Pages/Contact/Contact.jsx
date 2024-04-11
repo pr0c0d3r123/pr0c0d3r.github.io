@@ -1,4 +1,4 @@
-// TODO CONTACT FORM NEEDS TO SEND DATA TO "n4168460@gmail.com"
+// TODO FIX CONTACT FORM (IT'S SENDING EMPTY VALUES FROM INPUT ELEMENTS)
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
