@@ -1,11 +1,8 @@
-import Nav from "../../Nav";
-import { NavLink } from "react-router-dom";
 import "./about.css";
 
 const About = () => {
   return (
     <div className="center">
-      <Nav />
       <h1>About Us</h1>
       <h2>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere eaque
@@ -16,10 +13,6 @@ const About = () => {
         aspernatur fugit temporibus quaerat molestias eius commodi harum
         suscipit pariatur tempore vitae dolore, quia ipsum ab?
       </h2>
-
-      <NavLink to="/" className="btn">
-        Go Back
-      </NavLink>
     </div>
   );
 };

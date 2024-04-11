@@ -1,7 +1,6 @@
 // Imports
 
 import { useState } from "react";
-import { Nav } from "../../../components";
 import Card from "./Card";
 import API from "../../../../Handler/API";
 
@@ -33,7 +32,6 @@ const Products = () => {
 
   return (
     <div className="prod-cont">
-      <Nav />
       {data && // Checking if data is successfully delivered to app (code is not working without this part)
         data.map((el) => (
           <Card // Using map() to iterate through object and setting data to props of "Card" child

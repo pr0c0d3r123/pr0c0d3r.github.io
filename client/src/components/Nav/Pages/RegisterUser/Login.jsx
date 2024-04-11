@@ -1,11 +1,9 @@
 import "./register.css";
-import { Nav } from "../../../components";
 import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
     <div className="center">
-      <Nav />
       <form className="register-page">
         <label htmlFor="Email">
           Email

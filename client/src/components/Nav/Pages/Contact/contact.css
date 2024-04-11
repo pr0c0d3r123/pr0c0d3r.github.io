@@ -47,6 +47,7 @@
 }
 
 .contact input[type="email"],
+.contact input[type="text"],
 textarea {
   border: none;
   font-size: var(--med);
@@ -57,7 +58,8 @@ textarea {
   color: var(--secondary);
 }
 
-.contact input[type="email"] {
+.contact input[type="email"],
+.contact input[type="text"] {
   width: calc(100% - var(--med));
 }
 

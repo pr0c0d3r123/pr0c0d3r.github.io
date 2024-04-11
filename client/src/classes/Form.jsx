@@ -10,25 +10,25 @@ const Form = () => {
 
   return (
     <form className="register-page">
-      <div className="label">
-        <label htmlFor="fname">First Name</label>
+      <label htmlFor="fname">
+        First Name
         <input type="text" name="fname" />
-      </div>
+      </label>
 
-      <div className="label">
-        <label htmlFor="lname">Last Name</label>
+      <label htmlFor="lname">
+        Last Name
         <input type="text" name="lname" />
-      </div>
+      </label>
 
-      <div className="label">
-        <label htmlFor="email">Email</label>
+      <label htmlFor="email">
+        Email
         <input type="email" name="email" />
-      </div>
+      </label>
 
-      <div className="label">
-        <label htmlFor="passwd">Password</label>
+      <label htmlFor="passwd">
+        Password
         <input type="password" name="passwd" />
-      </div>
+      </label>
 
       <input type="submit" value="Sign up" className="btn" />
 
