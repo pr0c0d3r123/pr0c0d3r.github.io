@@ -1,4 +1,4 @@
-// Imports
+// * Imports
 
 const express = require("express"); // Express JS is javascript framework for creating APIs
 const BodyParser = require("body-parser");
@@ -6,7 +6,7 @@ const mysql = require("mysql"); // MySQL is for connection with MySQL database
 const cors = require("cors"); // Cors for accessing external links. Is used with Express JS
 const path = require("path"); // Path for manipulating filesystem
 
-// Database connections
+// * Database connections
 
 const usersdb = mysql.createConnection({
   // Creating connection with user database
@@ -26,15 +26,13 @@ const productsdb = mysql.createConnection({
 
 const app = express(); // Creating Express app
 
-app.use(cors()); // Putting cors inside webapp
+app.use(cors()); // Putting cors inside app
 app.use(BodyParser.json()); // Putting BodyParser.json() function because of POST requests (we are sending data to server and we need data to be in JSON format)
 app.use(BodyParser.urlencoded({ extended: true })); // Putting BodyParser.urlencoded() function for parsing incoming JSON objects
 
-// Server running on this port
+const port = 5000; // Server running on this port
 
-const port = 5000;
-
-// Login
+// * Login
 
 usersdb.connect((err) => {
   // Connecting to database users
@@ -46,7 +44,7 @@ usersdb.connect((err) => {
 
 app.post("/api/users", (req, res) => {});
 
-// Products
+// * Products
 
 productsdb.connect((err) => {
   // Connecting to database products
@@ -63,14 +61,12 @@ app.get("/api/products", (req, res) => {
   });
 });
 
-// Error on wrong URL
-
 app.get("/api/:universalURL", (req, res) => {
+  // Error on wrong URL
   res.send("Error 404. Not Found");
 });
 
-// Running server
-
 app.listen(port, () => {
+  // Running server
   console.log("Listening...");
 });

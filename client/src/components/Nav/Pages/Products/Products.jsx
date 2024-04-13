@@ -1,24 +1,23 @@
-// Imports
+// * Make sure that when the user tries to find item that is not available in the database to put h2 element with the text "No results"
 
-import { useState } from "react";
+// * Imports
+
+import { useRef, useState } from "react";
 import Card from "./Card";
 import API from "../../../../Handler/API";
 
-// CSS
+// * CSS
 
 import "./products.css";
 
 const Products = () => {
-  // useState hook for storing data from mySQL database
+  const [data, setData] = useState(null); // useState hook for storing data from mySQL database
+  const ref = useRef(""); // useState hook for storing search value
 
-  const [data, setData] = useState(null);
+  const api = new API(); // Creating new API object
+  const getData = api.getProdData(); // Getting data from server and storing it inside getData variable
 
-  // Creating new API object
-
-  const api = new API();
-  const getData = api.getProdData();
-
-  // Then/catch block
+  // * Then/catch block
 
   getData
     .then((res) => {
@@ -28,20 +27,51 @@ const Products = () => {
       console.log(err); // Catching error if it occurs
     });
 
-  // Rendering component
+  // * Rendering component
 
   return (
     <div className="prod-cont">
-      {data && // Checking if data is successfully delivered to app (code is not working without this part)
-        data.map((el) => (
-          <Card // Using map() to iterate through object and setting data to props of "Card" child
-            key={el.id}
-            src={el.src}
-            name={el.name}
-            alt={el.alt}
-            price={el.price}
-          />
-        ))}
+      <input
+        type="text"
+        name="search"
+        className="prod-search"
+        placeholder="Search for item"
+        value={ref.current} // Input value is being stored inside "ref.current" for filtering
+        onChange={(e) => (ref.current = e.target.value)} // When input element is changing, it will store the current value in "ref.current"
+      />
+      <div className="prod-cards">
+        {data ? (
+          data
+            .filter((prod) => {
+              // Filter data based on current value of "ref.current"
+              if (!ref.current)
+                return true; // If current value is empty, return true (for further checking)
+              else if (
+                prod.name.toLowerCase().includes(ref.current.toLowerCase())
+              )
+                // "includes()" check if name of product and "ref.current" in lowercase are same, if yes then it returns true (for further checking)
+                return true;
+              else if (prod.name.toLowerCase() !== ref.current.toLowerCase())
+                return false;
+              else return false;
+            })
+            .map(
+              (
+                prod // Mapping through "data" to render "Card" component with it's properties (defined in "Card.jsx" file)
+              ) => (
+                <Card
+                  key={prod.id}
+                  src={prod.src}
+                  name={prod.name}
+                  alt={prod.alt}
+                  price={prod.price}
+                />
+              )
+            )
+        ) : (
+          <h2>Data not found!</h2> // If data is not received from database then return "Data not found"
+        )}
+      </div>
     </div>
   );
 };
