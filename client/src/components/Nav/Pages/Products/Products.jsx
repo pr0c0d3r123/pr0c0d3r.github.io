@@ -1,18 +1,18 @@
 // * Make sure that when the user tries to find item that is not available in the database to put h2 element with the text "No results"
 
-// * Imports
+//* Imports
 
 import { useRef, useState } from "react";
 import Card from "./Card";
 import API from "../../../../Handler/API";
 
-// * CSS
+//* CSS
 
 import "./products.css";
 
 const Products = () => {
   const [data, setData] = useState(null); // useState hook for storing data from mySQL database
-  const ref = useRef(""); // useState hook for storing search value
+  const ref = useRef(""); // useRef hook for storing search value
 
   const api = new API(); // Creating new API object
   const getData = api.getProdData(); // Getting data from server and storing it inside getData variable
@@ -21,13 +21,13 @@ const Products = () => {
 
   getData
     .then((res) => {
-      setData(res.data); // Storing result in "data" variable using setData from useState hook
+      setData(res.data); // Storing result in "data" variable using "setData" function from useState hook
     })
     .catch((err) => {
       console.log(err); // Catching error if it occurs
     });
 
-  // * Rendering component
+  //* Rendering component
 
   return (
     <div className="prod-cont">
@@ -36,7 +36,7 @@ const Products = () => {
         name="search"
         className="prod-search"
         placeholder="Search for item"
-        value={ref.current} // Input value is being stored inside "ref.current" for filtering
+        value={ref.current} // Value of function below needs to be put inside value of input element
         onChange={(e) => (ref.current = e.target.value)} // When input element is changing, it will store the current value in "ref.current"
       />
       <div className="prod-cards">

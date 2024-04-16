@@ -1,23 +1,21 @@
-// React libraries
+//* React libraries
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Components
+//* Components
 
 import Index from "./Index";
 
-// CSS
+//* CSS
 
 import "./index.css";
 
-document.title = "Natural Products"; // Changing title of the document
-
-// Rendering react app
+//* Rendering react app
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // Using React.StrictMode for safer code
+  // Using React.StrictMode for safer code and Routes for being able to route through other components (* means that "Index" component is place where everything is being rendered on)
   <React.StrictMode>
     <BrowserRouter>
       <Routes>

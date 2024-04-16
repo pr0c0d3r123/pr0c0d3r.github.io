@@ -33,7 +33,6 @@ nav {
 
   background: var(--secondary);
   width: 100%;
-  padding-block: 15px;
 
   display: flex;
   flex-direction: row;
@@ -43,6 +42,21 @@ nav {
   z-index: 5;
 
   user-select: none;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 10px;
+
+  cursor: pointer;
 }
 
 a {

@@ -41,6 +41,7 @@
 
 body {
   font-family: var(--font) !important;
+  font-weight: 700;
   background: var(--primary) !important;
   display: flex !important;
   justify-content: center !important;

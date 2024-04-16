@@ -23,19 +23,35 @@
   gap: 30px;
   background: #814200;
   padding: 40px;
+  border-radius: var(--borr-outer);
 }
 
 input {
   font-size: 20px;
 }
 
+input:focus {
+  outline: none;
+}
+
 label {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 10px;
+  color: #fff;
 }
 
-.passwd {
-  position: relative;
+.form-eye {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.signin-switch {
+  color: #fff;
 }

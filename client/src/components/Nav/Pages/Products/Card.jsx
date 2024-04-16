@@ -2,11 +2,11 @@
 
 import { NavLink } from "react-router-dom";
 
-// Rendering component
+//* Rendering component
 
 const Card = (prop) => {
   return (
-    // Putting "prop" parameter inside "img" elements and "p" elements because they're gonna be usable for multiple parameters
+    // This component has "props" which means that variables can be passed directly to the component from another component like HTML tag properties (can be seen in the "Products" component)
     <div className="prod-card">
       <img src={prop.src} alt={prop.alt} loading="lazy" />
       <div className="desc">
