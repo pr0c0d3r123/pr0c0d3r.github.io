@@ -6,7 +6,7 @@
   --borr-inner: 10px;
   --pad-outer: var(--borr-inner);
   --borr-outer: calc(var(--borr-inner) + var(--pad-outer));
-  --card-w: 200px;
+  --card-w: 250px;
 
   --clr-scheme: light dark;
   --primary: #d66f00;
@@ -54,6 +54,7 @@
   align-items: center;
   position: relative;
   width: var(--card-w);
+  aspect-ratio: 1 / 1;
   background: var(--primary-dark);
   color: #fff;
   padding: var(--pad-outer);
